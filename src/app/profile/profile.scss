@@ -1,0 +1,128 @@
+.profile {
+
+  background-color: #f3f3f3;
+  padding-bottom: 75px;
+  .posted-by {
+     background-color: white;
+     border: 1px solid #cdcdcd;
+     border-radius: 10px;
+
+    .designation-inp {
+      margin: 10px 0;
+      width: 550px;
+    }
+
+    .summary-inp {
+      width: 550px;
+    }
+
+  }
+
+  .profile-heading {
+      width: 987px;
+      height: 24px;
+      font-family: Colfax;
+      font-size: 30px;
+      color: #000000;
+      margin-top: 20px;
+  }
+
+  .username {
+      height: 39px;
+      font-family: Colfax;
+      font-size: 32px;
+      color: #000000;
+      margin-top: 42px;
+  }
+
+  .designation {
+    width: 910px;
+    height: 42px;
+    font-family: Colfax;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    margin-top: 20px;
+  }
+
+  .rectangle-9 {
+    width: 268px;
+    height: 44px;
+    border-radius: 3px;
+    background-color: #f3f3f3;
+    border: solid 1px #e4e4e4;
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-top: 8px;
+  }
+
+  .message {
+    height: 21px;
+    font-family: Colfax;
+    font-size: 18px;
+    color: #4a4a4a;
+
+  }
+
+  .other-headings {
+    height: 27px;
+    font-family: Colfax;
+    font-size: 22px;
+    font-weight: 500;
+    color: #000000;
+    margin-top: 30px;
+  }
+
+  .quick-stats {
+    width: 345px;
+    height: 148px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    margin-top: 5px;
+  }
+
+  .asked {
+      font-family: Colfax;
+      font-size: 16px;
+      line-height: 1.88;
+      letter-spacing: 1px;
+      color: #39393a;
+  }
+
+  .verified-rectangle {
+    width: 180px;
+    height: 29px;
+    border-radius: 3px;
+    background-color: #e2f1ec;
+    padding-left: 5px;
+    padding-top: 5px;
+  }
+
+  .verified-responses {
+      width: 176px;
+      height: 17px;
+      font-family: Colfax;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      color: #155a3f;
+  }
+
+  .subscribed-topics {
+    width: 345px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: solid 1px #e4e4e4;
+    margin-top: 5px;
+    margin-left: 0px;
+    .tags-wrapper {
+      padding: 15px 0;
+    }
+  }
+  .add-topics {
+    color: #457eca;
+    padding: 10px 25px;
+  }
+
+}

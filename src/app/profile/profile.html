@@ -1,0 +1,60 @@
+<up-flow-header logged-in="true"></up-flow-header>
+<div class="container-fluid profile">
+
+  <div class="col-md-offset-1 profile-heading">Profile</div>
+  <hr style="color: black">
+
+  <div class="row" style="margin-top: 30px ;">
+    <div class="posted-by col-md-10 col-md-offset-1">
+      <div class="row">
+        <div class="col-md-3">
+          <img ng-src="{{profile.userObj.imageUrl}}" class="img-circle" style="width: 174px; margin:36px;"/>
+        </div>
+        <div class="col-md-4">
+          <div class="username">{{profile.userObj.fullName}}</div>
+          <div ng-if="profile.userObj.designation" class="designation">{{profile.userObj.designation}}</div>
+          <div ng-if="profile.userObj.summary" class="summary">{{profile.userObj.summary}}</div>
+          <input class="form-control designation-inp" ng-if="!profile.userObj.designation"
+                 placeholder="Add Designation">
+          <textarea class="form-control summary-inp" rows="3" ng-if="!profile.userObj.summary"
+                    placeholder="Add Summary"></textarea>
+          <!--<div class="rectangle-9">-->
+          <!--<div class="message"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>-->
+          <!--Send Direct Message</div>-->
+          <!--</div>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-7 col-md-offset-1">
+      <div class="other-headings">Top Posts</div>
+      <div style="margin-top: 30px; margin-left: -70px">
+        <up-flow-question ng-repeat="qstn in profile.userObj.askedQuestions" question-obj="qstn"></up-flow-question>
+        <div style="margin-top: 30px; margin-left: 100px" ng-if="!profile.userObj.askedQuestions.length">NO POSTS AVAILABLE</div>
+      </div>
+    </div>
+    <div class=" col-md-3 ">
+      <div class="other-headings">Quick Stats</div>
+      <div class="quick-stats" style="padding-left: 20px; padding-top: 20px">
+        <div class="asked">{{profile.userObj.askedQuestions.length || 0}} Questions Asked</div>
+        <div class="asked">{{profile.userObj.answerCount}} Responses Posted</div>
+        <div class="verified-rectangle">
+          <div class="verified-responses">0 VERIFIED RESPONSES</div>
+        </div>
+      </div>
+      <div class="other-headings">Subscribed Topics</div>
+      <div class="subscribed-topics">
+        <div class="row">
+          <div ng-repeat="t in ['kafka', 'elstic', 'jenkins', 'docker']" class="col-sm-5 col-sm-offset-1 tags-wrapper">
+            <tag-name name="t"></tag-name><i class="glyphicon glyphicon-remove"></i>
+          </div>
+        </div>
+        <p class="add-topics"> Add Topics + </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<up-flow-footer></up-flow-footer>

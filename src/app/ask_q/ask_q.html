@@ -1,0 +1,31 @@
+<up-flow-header logged-in="true"></up-flow-header>
+<div class="container-fluid ask-que">
+    <div class="row heading">
+      <div class="col-md-10 col-md-offset-1">Ask a Question</div>
+    </div>
+    <div class="row">
+        <form name="askques" class="col-md-10 col-md-offset-1 ask-form">
+            <div class="form-group subheadings">
+                <label for="exampleInputEmail1">Question Title</label>
+                <textarea required rows="3" class="form-control" id="exampleInputEmail1" ng-model="ask.title" placeholder="What is your question? Be specific"></textarea>
+            </div>
+            <div class="form-group subheadings">
+                <label for="questionDetails">Question Details</label>
+                <textarea required rows="5" class="form-control" id="questionDetails" ng-model="ask.details" placeholder="What additional information will help describe your question?"></textarea>
+            </div>
+
+          <div class="form-group subheadings">
+            <label for="topics">Topics</label>
+            <tags-input ng-model="ask.topics" placeholder="Add topics related to your question(max of 5)" id="topics"></tags-input>
+          </div>
+
+          <div class="checkbox subheadings">
+            <label>
+              <input type="checkbox"><span class="notify">Notify me of responses to my question</span>
+            </label>
+          </div>
+          <button ng-disabled="askques.$invalid" type="submit" class="btn btn-primary" ng-click="ask.postQuestion()">POST QUESTION</button>
+        </form>
+    </div>
+</div>
+<up-flow-footer></up-flow-footer>

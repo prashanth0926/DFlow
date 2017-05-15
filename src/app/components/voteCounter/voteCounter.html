@@ -1,0 +1,15 @@
+<div ng-if="vc.new" class="vote-counter-new">
+  <span class="row new-count">
+    <p>{{vc.count}}</p>
+  </span>
+  <span class="row">
+    <span ng-click="vc.inc()" class="col-sm-5 glyphicon glyphicon-thumbs-up"></span>
+    <span ng-click="vc.dec()" class="col-sm-offset-2 col-sm-5 glyphicon glyphicon-thumbs-down"></span>
+  </span>
+</div>
+<div ng-if="!vc.new" class="vote-counter-old">
+  <span ng-click="vc.inc()" class="glyphicon glyphicon-menu-up"></span>
+  <span class="count">{{vc.count}}</span>
+  <span class="votes">VOTES</span>
+  <span ng-click="vc.dec()" class="glyphicon glyphicon-menu-down"></span>
+</div>

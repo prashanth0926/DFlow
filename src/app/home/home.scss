@@ -1,0 +1,126 @@
+.home {
+  padding: 0;
+
+  /* enable absolute positioning */
+  .inner-addon {
+    position: relative;
+    margin-left: 24%;
+    margin-top: 45px;
+  }
+
+  /* style icon */
+  .inner-addon .glyphicon {
+    position: absolute;
+    padding: 15px;
+    pointer-events: none;
+    color: #cdcdcd;
+    font-size: 1.4em;
+  }
+
+  /* align icon */
+  .left-addon .glyphicon  { left:  0px;}
+  .right-addon .glyphicon { right: 0px;}
+
+  /* add padding  */
+  .left-addon input  { padding:  24px 55px; }
+  .right-addon input { padding-right: 30px; }
+
+  .jumbotron {
+    text-align: center;
+    color: #424242;
+    //background: url("/assets/images/uptake1.jpeg");
+    //background-size: 100% 100%;
+    //opacity: 0.1;
+    //background-repeat: no-repeat;
+    padding: 120px;
+    input {
+      width: 65%;
+    }
+    h1 {
+      font-size: 42px;
+    }
+    button {
+      margin-left: -35%;
+      width: 230px;
+    }
+    .divider {
+      padding: 25px 0 10px;
+      width: 60%;
+      margin-left: 2%;
+      .vertical-divider {
+        margin-top: 10px;
+        border-bottom: 1px solid #cdcdcd;
+      }
+    }
+  }
+  .statistics {
+    margin: -27px 0 0 0;
+    background-color: #7bb19b;
+    color: white;
+    text-align: center;
+    .center-col {
+      border-left: 1px solid #cdcdcd;
+      border-right: 1px solid #cdcdcd;
+    }
+    div {
+      padding: 0;
+      margin: 25px 0;
+      .value {
+        font-size: 48px;
+      }
+      .key {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      span {
+        display: block;
+      }
+    }
+  }
+  .trending-questions {
+    padding-bottom: 100px;
+    background-color: #f3f3f3;
+    .trending-header {
+      padding: 30px 90px;
+      font-size: 30px;
+      color: #878787;
+      border-bottom: 1px solid #cdcdcd;
+      margin-bottom: 50px;
+      margin-top: 0;
+    }
+    .all-questions {
+      margin-bottom: 0;
+    }
+    .topic-list-tabs {
+      margin-left: 55px;
+      margin-top: 40px;
+      margin-bottom: 25px;
+      font-size: 16px;
+      font-weight: 300;
+      .topic-list {
+        padding: 5px 1px;
+        margin-left: 40px;
+      }
+      .active {
+        color: #5493d4;
+        border-bottom: 1px solid #5493d4;
+      }
+    }
+    .tags-list {
+      margin-left: 8%;
+      margin-bottom: 20px;
+      tag-name {
+        padding: 0 5px;
+      }
+      .viewing {
+        color: #686868;
+        margin-right: 25px;
+      }
+    }
+    button {
+      margin-left: 37%;
+      width: 275px;
+      margin-top: 30px;
+    }
+  }
+}

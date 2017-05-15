@@ -1,0 +1,62 @@
+<up-flow-header logged-in="true"></up-flow-header>
+
+<div class="container-fluid home">
+  <div ng-if="home.showJumbotron">
+    <div class="jumbotron">
+      <h1>What question do you need answered today?</h1>
+      <h3>Search our database of questions or ask something new</h3>
+      <div class="inner-addon left-addon">
+        <i class="glyphicon glyphicon-search"></i>
+        <input ng-model="home.searchTerm" ng-keypress="home.search($event)" type="text"
+               placeholder="Input your question here" class="form-control"/>
+
+        <div class="row divider">
+          <div class="col-sm-5 vertical-divider"></div>
+          <p class="col-sm-2">or</p>
+          <div class="col-sm-5 vertical-divider"></div>
+        </div>
+
+        <button ui-sref="ask({search:home.searchTerm})" class="btn btn-primary">POST A QUESTION</button>
+      </div>
+    </div>
+
+    <div class="statistics row">
+      <div class="col-sm-4">
+        <span class="value">{{home.questionsCount || 0}}</span>
+        <span class="key">Questions Asked</span>
+      </div>
+      <div class="col-sm-4 center-col">
+        <span class="value">{{home.answersCount || 0}}</span>
+        <span class="key">Answers Posted</span>
+      </div>
+      <div class="col-sm-4">
+        <span class="value">{{home.usersCount || 0}}</span>
+        <span class="key">Active Users</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="trending-questions">
+    <h4 class="trending-header" ng-if="home.homeTitle == 'trending'">TRENDING</h4>
+    <h4 class="trending-header" ng-if="home.homeTitle == 'search'">SEARCH RESULTS</h4>
+    <div ng-if="home.homeTitle == 'all'">
+      <h4 class="trending-header all-questions">QUESTIONS</h4>
+      <div class="row topic-list-tabs">
+        <span ng-click="home.toggleTabs(0)" class="{{home.allTopics}} topic-list">ALL TOPICS</span>
+        <span ng-click="home.toggleTabs(1)" class="{{home.subsTopics}} topic-list">SUBSCRIBED TOPICS</span>
+      </div>
+      <div ng-if="home.subscribedTab" class="row tags-list">
+        <span class="viewing">VIEWING</span>
+        <tag-name ng-repeat="nme in home.tagNames" name="nme"></tag-name>
+      </div>
+    </div>
+    <up-flow-question ng-repeat="question in quesFiltered = (home.questions | filter: home.searchTerm)"
+                      question-obj="question"></up-flow-question>
+    <h4 class="trending-header" ng-if="!quesFiltered.length">NO QUESTIONS AVAILABLE</h4>
+    <button ng-if="home.homeTitle == 'search'" ui-sref="ask({search:home.searchTerm})" class="btn btn-primary">POST A QUESTION</button>
+    <button ng-if="home.showJumbotron" ng-click="home.showAllQuestions()" class="btn btn-primary">VIEW ALL QUESTIONS
+    </button>
+  </div>
+</div>
+
+<up-flow-footer></up-flow-footer>

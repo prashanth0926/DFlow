@@ -1,0 +1,35 @@
+<up-flow-header logged-in="true"></up-flow-header>
+<div class="container qa-detail">
+  <h3>{{qa.question.title}}</h3>
+  <div class="row">
+    <div class="col-md-8 qa-forum">
+      <div class="question-details-desc">
+        <up-flow-answer ng-if="qa.askedQuestion.upVotes" asked="true" answer-obj="qa.askedQuestion"></up-flow-answer>
+        <div class="row response-count">
+          <span class="total-responses">{{qa.question.answers.length || 0}} Answers</span>
+          <span class="pull-right add-response">Add Response</span>
+        </div>
+        <div>
+          <form name="submitques">
+            <textarea required class="response-input" ng-model="qa.postAnswerObj.answer"></textarea>
+            <button ng-disabled="submitques.$invalid" ng-click="qa.postAnswer()" class="btn btn-primary btn-sm submit-response">SUBMIT
+              RESPONSE
+            </button>
+          </form>
+        </div>
+      </div>
+      <up-flow-answer ng-repeat="answer in qa.question.answers" question-id="qa.question._id"
+                      answer-obj="answer"></up-flow-answer>
+    </div>
+    <div class="col-md-2">
+      <!--<div class="related-questions">-->
+      <!--<p>Related Questions</p>-->
+      <!--<ul>-->
+      <!--<li><a>Are there any endpoints that can return paginated results?</a></li>-->
+      <!--<li><a>How do I obtain a user access token?</a></li>-->
+      <!--</ul>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+<up-flow-footer></up-flow-footer>

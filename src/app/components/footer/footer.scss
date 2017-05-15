@@ -1,0 +1,22 @@
+.upflow-footer {
+  border-top: 1px solid #cdcdcd;
+  background-color: #f9f9f9;
+  padding: 25px 50px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  .copy-right {
+    font-size: 14px;
+    color: #7b7b7b;
+  }
+  .footer-links-list {
+    position: absolute;
+    right: 35%;
+    text-align: center;
+    .footer-link {
+      color: #5493d4;
+      font-size: 16px;
+      padding: 0 15px;
+    }
+  }
+}

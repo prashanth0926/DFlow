@@ -1,0 +1,22 @@
+<up-flow-header logged-in="false"></up-flow-header>
+
+<div class="container-fluid login-page">
+  <div class="login-title">
+    <h2>Login</h2>
+  </div>
+  <div class="single-sign-on">
+    <!--<label for="one-login">Sign in using</label>-->
+    <!--<button ng-click="login.oneLogin()" class="btn btn-primary" id="one-login">OneLogin</button>-->
+    <!--<div class="row divider"><div class="col-sm-5 vertical-divider"></div><p class="col-sm-2">or</p><div class="col-sm-5 vertical-divider"></div></div>-->
+    <!--<label for="cws-login">Sign in using</label>-->
+    <!--<button ng-click="login.cwsLogin()" class="btn btn-primary" id="cws-login">CWS ID</button>-->
+    <!--<div class="row divider"><div class="col-sm-5 vertical-divider"></div><p class="col-sm-2">or</p><div class="col-sm-5 vertical-divider"></div></div>-->
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <button class="btn btn-block btn-primary" ng-click="login.authenticate('live')">Sign in with Windows Live</button>
+    <button class="btn btn-block btn-primary" ng-click="login.authenticate('google')">Sign in with Google</button>
+  </div>
+</div>
+
+<up-flow-footer></up-flow-footer>
+
+<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>

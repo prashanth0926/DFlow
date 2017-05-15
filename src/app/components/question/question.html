@@ -1,0 +1,27 @@
+<div class="container up-flow-question">
+  <div class="col-sm-2 question-vote-counter">
+    <vote-counter new="true" users-voted="question.votedUsers" question-id="question.questionObj._id" count="question.questionObj.upVotes.length - question.questionObj.downVotes.length"></vote-counter>
+  </div>
+  <div ui-sref="qa-details({id: question.questionObj._id})" class="col-sm-9 question-meta">
+    <div class="posted-by row" ng-if="question.questionObj.userId.fullName">
+      <img ng-src="{{question.questionObj.userId.imageUrl}}" class="img-circle"/>
+      <div>
+        <span class="name">&#64;{{question.questionObj.userId.fullName}} </span><span class="posted-on">posted {{question.calcRelTime(question.questionObj.createdAt)}} <span ng-if="question.questionObj.details.slack">via Slack</span></span>
+      </div>
+    </div>
+    <div class="row question-title">
+      <h4>{{question.questionObj.title}}</h4>
+    </div>
+    <div class="row tag-names">
+      <tag-name ng-repeat="n in question.questionObj.topics" name="n"></tag-name>
+    </div>
+    <div ng-if="question.questionObj.userId.fullName" class="row contributers pull-right">
+      <img ng-repeat="cnt in question.questionObj.answers | unique: 'userId._id' | limitTo: 5" ng-src="{{cnt.userId.imageUrl}}"
+           class="img-circle col-sm-2"/>
+      <span ng-if="question.questionObj.answers.length" class="more">contributed <span ng-if="question.questionObj.answers > 5" class="additional-responses">+ {{question.questionObj.answers.length - 5}} additional responses</span></span>
+    </div>
+    <div ng-if="!question.questionObj.userId.fullName" class="posted-on-wrapper">
+      <span class="posted-on">posted {{question.calcRelTime(question.questionObj.createdAt)}} <span ng-if="question.questionObj.details.slack">via Slack</span></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<!--<div class="row">-->
+<!--<div ng-show="answer.answerObj.verificationStatus" class="verified col-md-3">-->
+<!--<span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>-->
+<!--<span class="verified-text">VERIFIED</span>-->
+<!--</div>-->
+<!--<div class="col-md-9" style="margin-left: 18px">{{answer.answerObj.text}}</div>-->
+<!--</div>-->
+<!--<div class="row" style="margin-top: 25px">-->
+<!--<div class="votes col-md-3" style="padding-left: 45px">-->
+<!--<span class="glyphicon glyphicon-menu-up arrow" style="font-size: 30px"></span>-->
+<!--<span class="layer">{{answer.answerObj.noOfVotes}}</span>-->
+<!--<span >VOTES</span>-->
+<!--<span class="glyphicon glyphicon-menu-down" style="font-size: 30px; color: #7b7b7b" aria-hidden="true"></span>-->
+<!--</div>-->
+<!--<div class="code col-md-6" style="margin-left: 29px"></div>-->
+<!--</div>-->
+
+<div class="upflow-answer">
+  <div class="row">
+    <div class="col-sm-2 vote-counter-wrapper">
+      <vote-counter ng-if="answer.asked" users-voted="answer.votedUsers" question-id="answer.answerObj._id" new="false" count="answer.answerObj.upVotes.length - answer.answerObj.downVotes.length"></vote-counter>
+      <vote-counter ng-if="!answer.asked" users-voted="answer.votedUsers" question-id="answer.questionId" answer-id="answer.answerObj._id" new="false" count="answer.answerObj.upVotes.length - answer.answerObj.downVotes.length"></vote-counter>
+    </div>
+    <div class="col-sm-11 answer-wrapper">
+      <span ng-if="(answer.answerObj.upVotes.length > 3) && !answer.asked" class="verified-response"><i class="glyphicon glyphicon-ok"></i> VERIFIED RESPONSE</span>
+      <p>{{answer.answerObj.answer}}</p>
+      <p ng-if="answer.asked"><tag-name ng-repeat="topic in answer.answerObj.topics" name="topic"></tag-name></p>
+      <span class="posted-by"><span ng-if="!answer.asked">POSTED</span> <span ng-if="answer.asked">ASKED</span> {{answer.calcRelTime(answer.answerObj.createdAt) | uppercase}} BY <span class="posted-by-name">{{answer.answerObj.userId.fullName | uppercase}}</span></span>
+    </div>
+  </div>
+</div>

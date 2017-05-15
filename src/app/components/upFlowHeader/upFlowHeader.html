@@ -1,0 +1,32 @@
+<div class="container-fluid upflow-header">
+  <div class="pull-left">
+
+    <div class="dropdown bar-dropdown">
+      <span class="icon-font dropbtn bar-icon-font glyphicon glyphicon-align-justify"></span>
+      <div class="dropdown-content">
+        <a ui-sref="home">BLOG</a>
+        <a ui-sref="home">FORUM</a>
+      </div>
+    </div>
+
+    <span ng-click="header.openHome()" ui-sref="home" class="upflow-brand">
+      <!--<span class="brand-symbol glyphicon glyphicon-menu-up"></span>-->
+      <!--<span class="brand-name">FLOW</span>-->
+      <img class="brand-image" src="assets/images/upflow.png">
+    </span>
+  </div>
+  <div class="pull-right" ng-if="header.loggedIn">
+    <span ui-sref="leaders" class="icon-font glyphicon glyphicon-stats"></span>
+    <span class="icon-font glyphicon glyphicon glyphicon-bell"></span>
+
+    <div class="dropdown profile-dropdown">
+      <span class="icon-font dropbtn dropbtn1 glyphicon glyphicon-user"></span>
+      <div class="dropdown-content">
+        <a ui-sref="profile">PROFILE</a>
+        <a ng-click="header.logout()">LOGOUT</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://apis.google.com/js/platform.js?onload=onLoadCallback" async defer></script>

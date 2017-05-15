@@ -1,0 +1,86 @@
+.upflow-header {
+  color: #939393;
+  border: 0.1px solid #888888;
+  background-color: #f9f9f9;
+  .icon-font {
+    font-size: 1.4em;
+    padding: 10px;
+    line-height: 2;
+  }
+  .bar-icon-font {
+    border-right: 1px solid #d8d8d8;
+    padding: 10px 25px;
+    margin-left: -15px;
+    ul.hover-dropdown {
+      display: none;
+    }
+  }
+  .brand-name {
+    font-weight: bold;
+    font-size: 1.4em;
+  }
+  .brand-symbol {
+    font-size: 1.8em;
+    margin-left: 10px;
+    top: 6px;
+  }
+  .bar-dropdown {
+    .dropdown-content {
+      width: 120px;
+    }
+  }
+  .profile-dropdown {
+    .dropdown-content {
+      margin-left: -40px;
+    }
+  }
+}
+
+/* Dropdown Button */
+.dropbtn {
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  margin-left: -15px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  background-color: #f3f3f3;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #cdcdcd}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+
+}
+
+.brand-image {
+  width: 100px;
+  margin-left: 25px;
+  margin-bottom: 5px;
+}
